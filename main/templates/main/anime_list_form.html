@@ -1,0 +1,30 @@
+{% extends 'main/layout.html' %}
+
+{% block title %} Форма выбора {% endblock %}
+
+{% block content %}
+    <div class="form-container">
+        <form method="GET" action="{% url 'anime_list' %}">
+            <label for="anime-year">Год выхода</label>
+            <select name="year" id="anime-year">
+                <option value="">-- Выберите год --</option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+            </select>
+
+            <label for="anime-season">Сезон выхода</label>
+            <select name="season" id="anime-season">
+                <option value="">-- Выберите сезон --</option>
+                <option value="spring">Весна</option>
+                <option value="summer">Лето</option>
+                <option value="fall">Осень</option>
+                <option value="winter">Зима</option>
+            </select>
+
+            <button type="submit">Отправить</button>
+        </form>
+    </div>
+
+{% endblock %}

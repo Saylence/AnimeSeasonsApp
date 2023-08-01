@@ -1,0 +1,22 @@
+{% extends 'main/layout.html' %}
+
+{% block title %} Главная страница {% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>Список аниме</h1>
+        {% if anime_lst %}
+            {% for el in anime_lst %}
+                <div class="alert alert-dark">
+                    <a href="{{el.anime_href}}">
+                        <h3>{{ el.name }}</h3>
+                        <img src="{{ el.img_href }}" alt="альтернативный текст">
+                    </a>
+                    <p>{{ el.genre }}</p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>Нет аниме-тайтлов</p>
+        {% endif %}
+    </div>
+{% endblock %}

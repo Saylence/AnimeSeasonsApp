@@ -1,0 +1,108 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700italic);
+* { padding: 0; margin: 0; }
+body { background: #1c2f3e; font-family: 'Lato', sans-serif; text-transform: uppercase; letter-spacing: 1px; color: #fff}
+
+header {
+  display: table;
+  padding: 2em 5%;
+  background: #2c3e50;
+  color: #fff;
+  width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+header nav,
+header div {
+  display: table-cell;
+  height: 100%;
+  vertical-align: middle;
+  height: 8em;
+}
+
+header nav {
+  text-align: right;
+}
+
+@media screen and (max-width: 720px){
+    header {
+        height: auto;
+    }
+
+    header > div,
+    header > div h1,
+    header nav {
+        height: auto;
+        width: auto;
+        display: block;
+        text-align: center;
+    }
+}
+
+header > div h1 {
+    font-size: 3em;
+    font-style: italic;
+}
+
+a {
+    padding: 0 0.6em;
+    white-space: nowrap;
+    text-decoration: none;
+    transition: 0.2s;
+    color: #fff
+}
+
+a:hover {
+    transform: scale(1.10);
+    color: #1e1e1e;
+}
+
+/* styles.css */
+
+/* Обнуление отступов и границ для элементов формы */
+.form-container form {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+/* Стили для центрирования формы */
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Отцентрированный контейнер формы */
+.form-container form {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    /* Центрирование формы по вертикали */
+    margin-top: 50px; /* Измените это значение по желанию */
+}
+
+/* Стили для select и label */
+.form-container label,
+.form-container select {
+    display: block;
+    margin: 10px auto; /* Центрирование по горизонтали с помощью margin */
+}
+
+.form-container button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+
+
