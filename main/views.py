@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import anime_list
-from animego import animegoParse
+from .animego import animegoParse
 
 def index(request):
     return render(request, "main/index.html")
@@ -26,7 +26,8 @@ def add_data_to_list(request):
     print(new_season, new_year)
     if new_season and new_year:
         parser = animegoParse(season= new_season, year=new_year)
+        parser.ged_data()
         anime_lst = anime_list.objects.filter(year=new_year, season=new_season)
     else:
         anime_lst = anime_list.objects.all()
-    return render(request, 'main/anime_list.html', {'anime_lst': anime_lst})
+    return render(request, 'main/get_data_form.html', {'anime_lst': anime_lst})

@@ -4,8 +4,7 @@
 
 {% block content %}
     <div class="form-container">
-        <form method="GET" action="{% url 'anime_list' %}">
-            {% scrf_token %}
+        <form method="GET" action="{% url 'add_anime_data' %}">
             <label for="anime-year">Год выхода</label>
             <select name="new_year" id="anime-year">
                 <option value="">-- Выберите год --</option>

@@ -3,7 +3,7 @@ import lxml
 import requests
 import json
 import psycopg2
-from config import host, user, password, db_name
+from .config import host, user, password, db_name
 
 class animegoParse():
     headers__ = {
@@ -50,8 +50,6 @@ class animegoParse():
                 all_anime_data_list.append((item_text, item_href, item_image, item_genre))
             print(all_anime_data_list)
 
-            with open(f"all_anime_list_{self.year}_{self.season}_{page}.json", "w", encoding="utf8") as file:
-                json.dump(all_anime_data_list, file, indent=4, ensure_ascii=False)
     def connect_to_db(self):
         insert_query = """
             INSERT INTO main_anime_list (name, anime_href, img_href, season, year, genre)
